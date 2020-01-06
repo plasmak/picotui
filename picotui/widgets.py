@@ -324,6 +324,8 @@ class WListBox(EditorExt, ChoiceWidget):
         self.choice = self.cur_line
         self.redraw()
         self.signal("changed")
+        if key == KEY_ENTER:
+            self.signal("selected")
         return res
 
     def handle_edit_key(self, key):
